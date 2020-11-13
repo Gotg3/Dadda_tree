@@ -119,55 +119,77 @@ entity dadda_tree is
 	
 	
 	--------------------LAYER 1----------------------------
-	--HA row 1,2 ; bit 24 
-	HA_1_2_24 : port map( l1_matrix(24,1), l1_matrix(24,2), l2_matrix(24,1), l2_matrix(25,1));
+	--HA  1-8
+	HA_1_8 for I in 24 to 31 generate
+	HA_L1_1_8: ha port map(l1_matrix(I,0), l1_matrix(I,1), l2_matrix(I,0), l2_matrix(I+1,1));
+	end generate HA_1_8;
 	
-	--HA row 1,2 ; bit 25,31 
-	HA_1_2_25_31 : for I in 1 to 8 generate
-	HA12_I: ha port map(l1_matrix(24+I,1), l1_matrix(24+I,2), l2_matrix(24+I,2), l2_matrix(24+I+1,1)
+	--HA  9-12
+	HA_9 : port map(l1_matrix(42,0), l1_matrix(42,1), l2_matrix(42,0), l2_matrix(43,0));
+	HA_10 : port map(l1_matrix(40,3), l1_matrix(40,4), l2_matrix(40,2), l2_matrix(41,2));
+	HA_11 : port map(l1_matrix(38,6), l1_matrix(38,7), l2_matrix(38,4), l2_matrix(39,4));
+	HA_12 : port map(l1_matrix(36,9), l1_matrix(36,10), l2_matrix(36,6), l2_matrix(37,6));
 	
+	--FA 1-6
+	FA_1_6 : for I in 26 to 31 generate
+	FA_L1_1_6: fa port map(l1_matrix(I,2), l1_matrix(I,3), l1_matrix(I,4), l2_matrix(I,2), l2_matrix(I+1,3));
+	end generate FA_1_6;
 	
+	--FA 7-10
+	FA_7_10 : for I in 28 to 31 generate
+	FA_L1_7_10: fa port map(l1_matrix(I,5), l1_matrix(I,6), l1_matrix(I,7), l2_matrix(I,4), l2_matrix(I+1,5));
+	end generate FA_7_10;
 	
+	--FA 11-12
+	FA_11_12 : for I in 30 to 31 generate
+	FA_L1_11_12: fa port map(l1_matrix(I,8), l1_matrix(I,9), l1_matrix(I,10), l2_matrix(I,6), l2_matrix(I+1,7));
+	end generate FA_11_12;
 	
-	----------------------------------------A DOMANI 
-	--HA row 2,3 ; bit 24,25 ok
-	HA_1_2_24 : port map( l1_matrix(24,1), l1_matrix(24,2), l2_matrix(24,1), l2_matrix(25,1));
-	HA_1_2_25 : port map( l1_matrix(25,1), l1_matrix(25,2), l2_matrix(25,2), l2_matrix(26,1));
+	--FA 13-22
+	FA_13_22 : for I in 32 to 41 generate
+	FA_L1_13_22: fa port map(l1_matrix(I,0), l1_matrix(I,1), l1_matrix(I,2), l2_matrix(I,0), l2_matrix(I+1,1));
+	end generate FA_13_22;
 	
-	--HA row 4,5 ; bit 26,27
-	HA_4_5_26 : port map( l1_matrix(26,4), l1_matrix(26,5), l2_matrix(26,4), l2_matrix(26,5));
-	HA_4_5_27 : port map( l1_matrix(27,4), l1_matrix(27,5), l2_matrix(27,4), l2_matrix(27,5));
+	--FA 23-30
+	FA_23_30 : for I in 32 to 39 generate
+	FA_L1_23_30: fa port map(l1_matrix(I,3), l1_matrix(I,4), l1_matrix(I,5), l2_matrix(I,3), l2_matrix(I+1,4));
+	end generate FA_23_30;
 	
-	--HA row 7,8 ; bit 28,29
-	HA_7_8_28 : port map( l1_matrix(28,7), l1_matrix(28,8), l2_matrix(28,7), l2_matrix(28,8));
-	HA_7_8_29 : port map( l1_matrix(29,7), l1_matrix(29,8), l2_matrix(29,7), l2_matrix(29,8));	
+	--FA 31-36
+	FA_31_36 : for I in 32 to 37 generate
+	FA_L1_31_36: fa port map(l1_matrix(I,6), l1_matrix(I,7), l1_matrix(I,8), l2_matrix(I,4), l2_matrix(I+1,5));
+	end generate FA_31_36;
 	
-	--HA row 10,11 ; bit 30,31
-	HA_10_11_30 : port map( l1_matrix(30,10), l1_matrix(30,11), l2_matrix(30,10), l2_matrix(30,11));
-	HA_10_11_31 : port map( l1_matrix(31,10), l1_matrix(31,11), l2_matrix(31,10), l2_matrix(31,11));
+	--FA 37-40
+	FA_37_40 : for I in 32 to 35 generate
+	FA_L1_37_40: fa port map(l1_matrix(I,9), l1_matrix(I,10), l1_matrix(I,11), l2_matrix(I,6), l2_matrix(I+1,7));
+	end generate FA_37_40;
 	
-	--HA row 5,6 ; bit 42
-	HA_5_6_42 : port map( l1_matrix(42,5), l1_matrix(42,6), l2_matrix(42,5), l2_matrix(42,6));
+	--connection dots L1 - L2
+	l2_matrix(23 downto 0)(12 downto 0)<=l1_matrix(23 downto 0)(12 downto 0);
 	
-	--HA row 7,8 ; bit 40
-	HA_7_8_40 : port map( l1_matrix(40,7), l1_matrix(40,8), l2_matrix(40,7), l2_matrix(40,8));
+	l2_matrix (24)(12 downto 1)<=l1_matrix(24)(13 downto 2);
+	l2_matrix (25)(12 downto 2)<=l1_matrix(25)(12 downto 2);
+	l2_matrix (26)(12 downto 3)<=l1_matrix(26)(14 downto 5);
+	l2_matrix (27)(12 downto 4)<=l1_matrix(27)(13 downto 5);
+	l2_matrix (28)(12 downto 5)<=l1_matrix(28)(15 downto 8);
+	l2_matrix (29)(12 downto 6)<=l1_matrix(29)(14 downto 8);
+	l2_matrix (30)(12 downto 7)<=l1_matrix(30)(16 downto 11);
+	l2_matrix (31)(12 downto 8)<=l1_matrix(31)(15 downto 11);
 	
-	--HA row 9,10 ; bit 38
-	HA_9_10_38 : port map( l1_matrix(38,9), l1_matrix(38,10), l2_matrix(38,9), l2_matrix(38,10));
+	l2_matrix (32 to 35)(8 to 12)<=l1_matrix(32 to 35)(12 to 16);
 	
-	--HA row 11,12 ; bit 36
-	HA_11_12_36 : port map( l1_matrix(36,11), l1_matrix(36,12), l2_matrix(36,11), l2_matrix(36,12));
+	l2_matrix (36)(8 to 12)<=l1_matrix(36)(11 to 15);
+	l2_matrix (37)(7 to 12)<=l1_matrix(37)(9 to 14);
+	l2_matrix (38)(6 to 12)<=l1_matrix(38)(8 to 14);
+	l2_matrix (39)(5 to 12)<=l1_matrix(39)(6 to 13);
+	l2_matrix (40)(4 to 12)<=l1_matrix(40)(5 to 13);
+	l2_matrix (41)(3 to 12)<=l1_matrix(41)(3 to 12);
+	l2_matrix (42)(2 to 12)<=l1_matrix(42)(2 to 12);
+	l2_matrix (43)(1 to 12)<=l1_matrix(43)(0 to 11);
 	
-	--FA row 1,2,3 ; bit 26 - 35 
-	FA_1_3_26_35: for I in 26 to 35 generate
-		FAI: FA port map(l1_matrix(I,1), l1_matrix(I,2), l1_matrix(I,3), l2_matrix(I,1), l2_matrix(I+1,1));
-	
-	--FA row 4,5,6 ; bit 28 - 35 
-	FA_4_6_28_35: for I in 28 to 35 generate
-		FAI: FA port map(l1_matrix(I,4), l1_matrix(I,5), l1_matrix(I,6), l2_matrix(I,1), l2_matrix(I,2));
-	
-	
-	
+	l2_matrix (44 to 63)(0 to 11)<=l1_matrix(44 to 63)(0 to 11);
+
 	--------------------LAYER 2----------------------------
 	
 	
