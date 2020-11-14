@@ -1,6 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
-
+library work;
+use work.dadda_package.all;
 
 entity dadda_tree is 
 
@@ -20,7 +21,7 @@ entity dadda_tree is
 	pp13: in std_logic_vector(k downto 0); --33 bit input
 	pp14: in std_logic_vector(k downto 0); --33 bit input
 	pp15: in std_logic_vector(k downto 0); --33 bit input
-	pp16 in std_logic_vector(k downto 0); --33 bit input
+	pp16: in std_logic_vector(k downto 0); --33 bit input
 	pp17: in std_logic_vector(k-1 downto 0); --32 bit input row 17
 	
 	s1: in std_logic; -- sign pp1
@@ -42,7 +43,7 @@ entity dadda_tree is
 	s17: in std_logic; -- sign pp17
 
 	out1: out std_logic_vector(k*2-1 downto 0); --64 bit out
-	out2: out std_logic_vector(k*2-2 downto 0); --63 bit out
+	out2: out std_logic_vector(k*2-2 downto 0) --63 bit out
 	
 	);
 	end dadda_tree;
@@ -120,15 +121,15 @@ entity dadda_tree is
 	
 	--------------------LAYER 1----------------------------
 	--HA  1-8
-	HA_1_8 for I in 24 to 31 generate
+	HA_1_8: for I in 24 to 31 generate
 	HA_L1_1_8: ha port map(l1_matrix(I,0), l1_matrix(I,1), l2_matrix(I,0), l2_matrix(I+1,1));
 	end generate HA_1_8;
 	
 	--HA  9-12
-	HA_9 : port map(l1_matrix(42,0), l1_matrix(42,1), l2_matrix(42,0), l2_matrix(43,0));
-	HA_10 : port map(l1_matrix(40,3), l1_matrix(40,4), l2_matrix(40,2), l2_matrix(41,2));
-	HA_11 : port map(l1_matrix(38,6), l1_matrix(38,7), l2_matrix(38,4), l2_matrix(39,4));
-	HA_12 : port map(l1_matrix(36,9), l1_matrix(36,10), l2_matrix(36,6), l2_matrix(37,6));
+	HA_9 : ha port map(l1_matrix(42,0), l1_matrix(42,1), l2_matrix(42,0), l2_matrix(43,0));
+	HA_10 : ha port map(l1_matrix(40,3), l1_matrix(40,4), l2_matrix(40,2), l2_matrix(41,2));
+	HA_11 : ha port map(l1_matrix(38,6), l1_matrix(38,7), l2_matrix(38,4), l2_matrix(39,4));
+	HA_12 : ha port map(l1_matrix(36,9), l1_matrix(36,10), l2_matrix(36,6), l2_matrix(37,6));
 	
 	--FA 1-6
 	FA_1_6 : for I in 26 to 31 generate
@@ -194,7 +195,7 @@ entity dadda_tree is
 	
 	
 	
-	
+	end architecture; 
 	
 	
 	
