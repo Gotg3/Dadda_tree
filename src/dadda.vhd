@@ -145,37 +145,37 @@ entity dadda_tree is
 
 	l1_r0(35 downto 0)<=( not s1 & s1 & s1 & pp1);
 	l1_r1(36 downto 2)<=( '1' & not s2 & pp2);
-	l1_r1(0)<=s2;
+	l1_r1(0)<=s1;
 	l1_r2(38 downto 4)<=( '1' & not s3 & pp3);
-	l1_r2(2)<=s3;
+	l1_r2(2)<=s2;
 	l1_r3(40 downto 6)<=( '1' & not s4 & pp4);
-	l1_r3(4)<=s4;
+	l1_r3(4)<=s3;
 	l1_r4(42 downto 8)<=( '1' & not s5 & pp5);
-	l1_r4(6)<=s5;
+	l1_r4(6)<=s4;
 	l1_r5(44 downto 10)<=( '1' & not s6 & pp6);
-	l1_r5(8)<=s6;
+	l1_r5(8)<=s5;
 	l1_r6(46 downto 12)<=( '1' & not s7 & pp7);
-	l1_r6(10)<=s7;
+	l1_r6(10)<=s6;
 	l1_r7(48 downto 14)<=( '1' & not s8 & pp8);
-	l1_r7(12)<=s8;
+	l1_r7(12)<=s7;
 	l1_r8(50 downto 16)<=( '1' & not s9 & pp9);
-	l1_r8(14)<=s9;
+	l1_r8(14)<=s8;
 	l1_r9(52 downto 18)<=( '1' & not s10 & pp10);
-	l1_r9(16)<=s10;
+	l1_r9(16)<=s9;
 	l1_r10(54 downto 20)<=( '1' & not s11 & pp11);
-	l1_r10(18)<=s11;
+	l1_r10(18)<=s10
 	l1_r11(56 downto 22)<=( '1' & not s12 & pp12);
-	l1_r11(20)<=s12;
+	l1_r11(20)<=s11;
 	l1_r12(58 downto 24)<=( '1' & not s13 & pp13);
-	l1_r12(22)<=s13;
+	l1_r12(22)<=s12;
 	l1_r13(60 downto 26)<=( '1' & not s14 & pp14);
-	l1_r13(24)<=s14;
+	l1_r13(24)<=s13;
 	l1_r14(62 downto 28)<=( '1' & not s15 & pp15);
-	l1_r14(26)<=s15;
+	l1_r14(26)<=s14;
 	l1_r15(63 downto 30)<=( not s16 & pp16);
-	l1_r15(28)<=s16;
+	l1_r15(28)<=s15;
 	l1_r16(63 downto 32)<=(pp17);
-	l1_r16(30)<=s17;
+	l1_r16(30)<=s16;
 	
 	
 	
@@ -785,7 +785,7 @@ entity dadda_tree is
 	end generate FA_1_60;
 	
 	l7_r1(1)<= l6_r0(1);
-	l7_r1(2)<= l6_r2(1);
+	l7_r1(2)<= l6_r2(2);
 	
 	----------------------assign outputs------------------
 	
