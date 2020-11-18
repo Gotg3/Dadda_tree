@@ -143,38 +143,38 @@ entity dadda_tree is
 	begin
 	--rows layer 1 assignment
 
-	l1_r0(35 downto 0)<=( not s1 & s1 & s1 & pp1);
-	l1_r1(36 downto 2)<=( '1' & not s2 & pp2);
+	l1_r0(63 downto 0)<=(not s16 & '1' & not s15 & '1' & not s14 & '1' & not s13 & '1' & not s12 & '1' & not s11 & '1' & not s10 & '1' & not s9 & '1' & not s8 & '1' & not s7 & '1'& not s6 & '1' & not s5 & '1' & not s4 & '1' & not s3 & '1' & not s1 & s1 & s1 & pp1);
+	l1_r1(63 downto 2)<=(  pp17(31) & pp16(32) & pp16(31) & pp15(32) & pp15(31) & pp14(32) & pp14(31) & pp13(32) & pp13(31) & pp12(32) & pp12(31) & pp11(32) & pp11(31) & pp10(32) & pp10(31) & pp9(32) & pp9(31) & pp8(32) & pp8(31) & pp7(32) & pp7(31) & pp6(32) & pp6(31) & pp5(32) & pp5(31) & pp4(32) & pp4(31) & pp3(32) & not s2 & pp2);
 	l1_r1(0)<=s1;
-	l1_r2(38 downto 4)<=( '1' & not s3 & pp3);
+	l1_r2(62 downto 4)<=( pp17(30) & pp17(29) & pp16(30) & pp16(29) & pp15(30) & pp15(29) & pp14(30) & pp14(29) & pp13(30) & pp13(29) & pp12(30) & pp12(29) & pp11(30) & pp11(29) & pp10(30) & pp10(29) & pp9(30) & pp9(29) & pp8(30) & pp8(29) & pp7(30) & pp7(29) & pp6(30) & pp6(29) & pp5(30) & pp5(29) & pp4(30) & pp3(31 downto 0));
 	l1_r2(2)<=s2;
-	l1_r3(40 downto 6)<=( '1' & not s4 & pp4);
+	l1_r3(60 downto 6)<=( pp17(28) & pp17(27) & pp16(28) & pp16(27) & pp15(28) & pp15(27) & pp14(28) & pp14(27) & pp13(28) & pp13(27) & pp12(28) & pp12(27) & pp11(28) & pp11(27) & pp10(28) & pp10(27) & pp9(28) & pp9(27) & pp8(28) & pp8(27) & pp7(28) & pp7(27) & pp6(28) & pp6(27) & pp5(28) & pp4(29 downto 0));
 	l1_r3(4)<=s3;
-	l1_r4(42 downto 8)<=( '1' & not s5 & pp5);
+	l1_r4(58 downto 8)<=( pp17(26) & pp17(25) & pp16(26) & pp16(25) & pp15(26) & pp15(25) & pp14(26) & pp14(25) & pp13(26) & pp13(25) & pp12(26) & pp12(25) & pp11(26) & pp11(25) & pp10(26) & pp10(25) & pp9(26) & pp9(25) & pp8(26) & pp8(25) & pp7(26) & pp7(25) & pp6(26) & pp5(27 downto 0));
 	l1_r4(6)<=s4;
-	l1_r5(44 downto 10)<=( '1' & not s6 & pp6);
+	l1_r5(56 downto 10)<=( pp17(24) & pp17(23) & pp16(24) & pp16(23) & pp15(24) & pp15(23) & pp14(24) & pp14(23) & pp13(24) & pp13(23) & pp12(24) & pp12(23) & pp11(24) & pp11(23) & pp10(24) & pp10(23) & pp9(24) & pp9(23) & pp8(24) & pp8(23) & pp7(24) & pp6(25 downto 0));
 	l1_r5(8)<=s5;
-	l1_r6(46 downto 12)<=( '1' & not s7 & pp7);
+	l1_r6(54 downto 12)<=( pp17(22) & pp17(21) & pp16(22) & pp16(21) & pp15(22) & pp15(21) & pp14(22) & pp14(21) & pp13(22) & pp13(21) & pp12(22) & pp12(21) & pp11(22) & pp11(21) & pp10(22) & pp10(21) & pp9(22) & pp9(21) & pp8(22) & pp7(23 downto 0));
 	l1_r6(10)<=s6;
-	l1_r7(48 downto 14)<=( '1' & not s8 & pp8);
+	l1_r7(52 downto 14)<=( pp17(20) & pp17(19) & pp16(20) & pp16(19) & pp15(20) & pp15(19) & pp14(20) & pp14(19) & pp13(20) & pp13(19) & pp12(20) & pp12(19) & pp11(20) & pp11(19) & pp10(20) & pp10(19) & pp9(20) & pp8(21 downto 0));
 	l1_r7(12)<=s7;
-	l1_r8(50 downto 16)<=( '1' & not s9 & pp9);
+	l1_r8(50 downto 16)<=( pp17(18) & pp17(17) & pp16(18) & pp16(17) & pp15(18) & pp15(17) & pp14(18) & pp14(17) & pp13(18) & pp13(17) & pp12(18) & pp12(17) & pp11(18) & pp11(17) & pp10(18) & pp9(19 downto 0));
 	l1_r8(14)<=s8;
-	l1_r9(52 downto 18)<=( '1' & not s10 & pp10);
+	l1_r9(48 downto 18)<=( pp17(16) & pp17(15) & pp16(16) & pp16(15) & pp15(16) & pp15(15) & pp14(16) & pp14(15) & pp13(16) & pp13(15) & pp12(16) & pp12(15) & pp11(16) & pp10(17 downto 0));
 	l1_r9(16)<=s9;
-	l1_r10(54 downto 20)<=( '1' & not s11 & pp11);
-	l1_r10(18)<=s10
-	l1_r11(56 downto 22)<=( '1' & not s12 & pp12);
+	l1_r10(46 downto 20)<=(pp17(14) & pp17(13) & pp16(14) & pp16(13) & pp15(14) & pp15(13) & pp14(14) & pp14(13) & pp13(14) & pp13(13) & pp12(14) & pp11(15 downto 0));
+	l1_r10(18)<=s10;
+	l1_r11(44 downto 22)<=( pp17(12) & pp17(11) & pp16(12) & pp16(11) & pp15(12) & pp15(11) & pp14(12) & pp14(11) & pp13(12) & pp12(13 downto 0));
 	l1_r11(20)<=s11;
-	l1_r12(58 downto 24)<=( '1' & not s13 & pp13);
+	l1_r12(42 downto 24)<=( pp17(10) & pp17(9) & pp16(10) & pp16(9) & pp15(10) & pp15(9) & pp14(10) & pp13(11 downto 0));
 	l1_r12(22)<=s12;
-	l1_r13(60 downto 26)<=( '1' & not s14 & pp14);
+	l1_r13(40 downto 26)<=( pp17(8) & pp17(7) & pp16(8) & pp16(7) & pp15(8) & pp14(9 downto 0));
 	l1_r13(24)<=s13;
-	l1_r14(62 downto 28)<=( '1' & not s15 & pp15);
+	l1_r14(38 downto 28)<=( pp17(6) & pp17(5) & pp16(6) & pp15(7 downto 0));
 	l1_r14(26)<=s14;
-	l1_r15(63 downto 30)<=( not s16 & pp16);
+	l1_r15(36 downto 30)<=( pp17(4) & pp16(5 downto 0));
 	l1_r15(28)<=s15;
-	l1_r16(63 downto 32)<=(pp17);
+	l1_r16(35 downto 32)<=(pp17(3 downto 0));
 	l1_r16(30)<=s16;
 	
 	
@@ -192,14 +192,14 @@ entity dadda_tree is
 	HA_12_L1 : ha port map(l1_r9(36), l1_r10(36), l2_r6(36), l2_r6(37));
 	
 	--FA 1-6
-	FA_1_6 : for I in 26 to 31 generate
+	FA_1_6_L1 : for I in 26 to 31 generate
 	FA_L1_1_6: fa port map(l1_r2(I), l1_r3(I), l1_r4(I), l2_r2(I), l2_r3(I+1));
-	end generate FA_1_6;
+	end generate FA_1_6_L1;
 	
 	--FA 7-10
-	FA_7_10 : for I in 28 to 31 generate
+	FA_7_10_L1 : for I in 28 to 31 generate
 	FA_L1_7_10: fa port map(l1_r5(I), l1_r6(I), l1_r7(I), l2_r4(I), l2_r5(I+1));
-	end generate FA_7_10;
+	end generate FA_7_10_L1;
 	
 	--FA 11-12
 	FA_11_12 : for I in 30 to 31 generate
@@ -207,24 +207,24 @@ entity dadda_tree is
 	end generate FA_11_12;
 	
 	--FA 13-22
-	FA_13_22 : for I in 32 to 41 generate
+	FA_13_22_L1 : for I in 32 to 41 generate
 	FA_L1_13_22: fa port map(l1_r0(I), l1_r1(I), l1_r2(I), l2_r0(I), l2_r1(I+1));
-	end generate FA_13_22;
+	end generate FA_13_22_L1;
 	
 	--FA 23-30
-	FA_23_30 : for I in 32 to 39 generate
+	FA_23_30_L1 : for I in 32 to 39 generate
 	FA_L1_23_30: fa port map(l1_r3(I), l1_r4(I), l1_r5(I), l2_r2(I), l2_r3(I+1));
-	end generate FA_23_30;
+	end generate FA_23_30_L1;
 	
 	--FA 31-36
-	FA_31_36 : for I in 32 to 37 generate
+	FA_31_36_L1 : for I in 32 to 37 generate
 	FA_L1_31_36: fa port map(l1_r6(I), l1_r7(I), l1_r8(I), l2_r4(I), l2_r5(I+1));
-	end generate FA_31_36;
+	end generate FA_31_36_L1;
 	
 	--FA 37-40
-	FA_37_40 : for I in 32 to 35 generate
+	FA_37_40_L1 : for I in 32 to 35 generate
 	FA_L1_37_40: fa port map(l1_r9(I), l1_r10(I), l1_r11(I), l2_r6(I), l2_r7(I+1));
-	end generate FA_37_40;
+	end generate FA_37_40_L1;
 	
 	--connection dots L1 - L2
 	l2_r0(23 downto 0)<=l1_r0(23 downto 0);
@@ -446,39 +446,39 @@ entity dadda_tree is
 	HA_12_L2 : ha port map(l2_r9(44), l2_r10(44), l3_r6(44), l3_r6(45));
 	
 	--FA 1-26
-	FA_1_26 : for I in 24 to 49 generate
+	FA_1_26_L2 : for I in 24 to 49 generate
 	FA_L2_1_26: fa port map(l2_r0(I), l2_r1(I), l1_r2(I), l3_r0(I), l3_r1(I+1));
-	end generate FA_1_26;
+	end generate FA_1_26_L2;
 	
 	--FA 27-32
-	FA_27_32 : for I in 18 to 23 generate
+	FA_27_32_L2 : for I in 18 to 23 generate
 	FA_L2_27_32: fa port map(l2_r2(I), l2_r3(I), l2_r4(I), l3_r2(I), l3_r3(I+1));
-	end generate FA_27_32;
+	end generate FA_27_32_L2;
 	
 	--FA 33-36
-	FA_33_36 : for I in 20 to 23 generate
+	FA_33_36_L2 : for I in 20 to 23 generate
 	FA_L2_33_36: fa port map(l2_r5(I), l2_r6(I), l2_r7(I), l3_r4(I), l3_r5(I+1));
-	end generate FA_33_36;
+	end generate FA_33_36_L2;
 	
 	--FA 37-38
-	FA_37_38 : for I in 22 to 23 generate
+	FA_37_38_L2 : for I in 22 to 23 generate
 	FA_L2_37_38: fa port map(l2_r8(I), l2_r9(I), l2_r10(I), l3_r6(I), l3_r7(I+1));
-	end generate FA_37_38;
+	end generate FA_37_38_L2;
 	
 	--FA 39-62
-	FA_39_62 : for I in 24 to 47 generate
+	FA_39_62_L2 : for I in 24 to 47 generate
 	FA_L2_39_62: fa port map(l2_r3(I), l2_r4(I), l2_r5(I), l3_r2(I), l3_r3(I+1));
-	end generate FA_39_62;
+	end generate FA_39_62_L2;
 	
 	--FA 63-84
-	FA_63_84 : for I in 24 to 45 generate
+	FA_63_84_L2 : for I in 24 to 45 generate
 	FA_L2_63_84: fa port map(l2_r6(I), l2_r7(I), l2_r8(I), l3_r4(I), l3_r5(I+1));
-	end generate FA_63_84;
+	end generate FA_63_84_L2;
 	
 	--FA 85-104
-	FA_85_104 : for I in 24 to 43 generate
+	FA_85_104_L2 : for I in 24 to 43 generate
 	FA_L2_85_104: fa port map(l2_r9(I), l2_r10(I), l2_r11(I), l3_r6(I), l3_r7(I+1));
-	end generate FA_85_104;
+	end generate FA_85_104_L2;
 	
 	l3_r0(15 downto 0)<= l2_r0(15 downto 0);
 	l3_r1(15 downto 0)<= l2_r1(15 downto 0);
@@ -542,8 +542,6 @@ entity dadda_tree is
 	
 	l3_r7(22)<=l2_r11(22);
 	
-	--l3_r8(23)<=l2_r11(23);
-	
 	l3_r8(44)<=l2_r11(44);
 	
 	l3_r7(45)<=l2_r9(45);
@@ -602,29 +600,29 @@ entity dadda_tree is
 	
 	
 	--FA 1-40
-	FA_1_40 : for I in 16 to 55 generate
+	FA_1_40_L3 : for I in 16 to 55 generate
 	FA_L3_1_40: fa port map(l3_r0(I), l3_r1(I), l3_r2(I), l4_r0(I), l4_r1(I+1));
-	end generate FA_1_40;
+	end generate FA_1_40_L3;
 	
 	--FA 41-44
-	FA_41_44 : for I in 12 to 15 generate
+	FA_41_44_L3 : for I in 12 to 15 generate
 	FA_L3_41_44: fa port map(l3_r2(I), l3_r3(I), l3_r4(I), l4_r2(I), l4_r3(I+1));
-	end generate FA_41_44;
+	end generate FA_41_44_L3;
 	
 	--FA 45-82
-	FA_45_82 : for I in 16 to 53 generate
+	FA_45_82_L3 : for I in 16 to 53 generate
 	FA_L3_45_82: fa port map(l3_r3(I), l3_r4(I), l3_r5(I), l4_r2(I), l4_r3(I+1));
-	end generate FA_45_82;
+	end generate FA_45_82_L3;
 	
 	--FA 83-84
-	FA_83_84 : for I in 14 to 15 generate
+	FA_83_84_L3 : for I in 14 to 15 generate
 	FA_L3_83_84: fa port map(l3_r5(I), l3_r6(I), l3_r7(I), l4_r4(I), l4_r5(I+1));
-	end generate FA_83_84;
+	end generate FA_83_84_L3;
 	
 	--FA 85-120
-	FA_85_120 : for I in 16 to 51 generate
+	FA_85_120_L3 : for I in 16 to 51 generate
 	FA_L3_85_120: fa port map(l3_r6(I), l3_r7(I), l3_r8(I), l4_r4(I), l4_r5(I+1));
-	end generate FA_85_120;
+	end generate FA_85_120_L3;
 	
 	l4_r0(9 downto 0)<= l3_r0(9 downto 0);
 	l4_r1(9 downto 0)<= l3_r1(9 downto 0);
@@ -693,19 +691,19 @@ entity dadda_tree is
 	
 
 	--FA 1-50
-	FA_1_50 : for I in 10 to 59 generate
+	FA_1_50_L4 : for I in 10 to 59 generate
 	FA_L4_1_50: fa port map(l4_r0(I), l4_r1(I), l4_r2(I), l5_r0(I), l5_r1(I+1));
-	end generate FA_1_50;
+	end generate FA_1_50_L4;
 	
 	--FA 51-52
-	FA_51_52 : for I in 8 to 9 generate
+	FA_51_52_L4 : for I in 8 to 9 generate
 	FA_L4_51_52: fa port map(l4_r2(I), l4_r3(I), l4_r4(I), l5_r2(I), l5_r3(I+1));
-	end generate FA_51_52;
+	end generate FA_51_52_L4;
 	
 	--FA 53-100
-	FA_53_100 : for I in 10 to 57 generate
+	FA_53_100_L4 : for I in 10 to 57 generate
 	FA_L4_53_100: fa port map(l4_r3(I), l4_r4(I), l4_r5(I), l5_r2(I), l5_r3(I+1));
-	end generate FA_53_100;
+	end generate FA_53_100_L4;
 	
     l5_r0(5 downto 0)<= l4_r0(5 downto 0);
 	l5_r1(5 downto 0)<= l4_r1(5 downto 0);
@@ -748,9 +746,9 @@ entity dadda_tree is
 	
 
 	--FA 1-56
-	FA_1_56 : for I in 6 to 61 generate
+	FA_1_56_L5 : for I in 6 to 61 generate
 	FA_L5_1_56: fa port map(l5_r0(I), l5_r1(I), l5_r2(I), l6_r0(I), l6_r1(I+1));
-	end generate FA_1_56;
+	end generate FA_1_56_L5;
 	
 	l6_r0(3 downto 0)<= l5_r0(3 downto 0);
 	l6_r1(3 downto 0)<= l5_r1(3 downto 0);
@@ -759,8 +757,6 @@ entity dadda_tree is
 	l6_r2(61 downto 4)<= l5_r3(61 downto 6) & l5_r2(5) & l5_r3(4);
 	
 	l6_r1(4)<= l5_r2(4);
-	
-	--l6_r2(5)<= l5_r2(5);
 	
 	l6_r2(62)<= l5_r2(62);
 	
